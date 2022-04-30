@@ -1,16 +1,17 @@
-# gatsby-source-greenhouse-job-board
+# gatsby-source-greenhouse-io
+
 > Source plugin for pulling offices, departments, and jobs into Gatsby from the Greenhouse Job Board API. It creates links between offices, departments, and jobs so they can be queried in Gatsby using GraphQL.
 
 ## Installation
 
 ```bash
-npm install gatsby-source-greenhouse-job-board
+npm install gatsby-source-greenhouse-io
 ```
 
 or
 
 ```bash
-yarn add gatsby-source-greenhouse-job-board
+yarn add gatsby-source-greenhouse-io
 ```
 
 ## Usage
@@ -25,7 +26,7 @@ Next, edit `gatsby-config.js` to use the plugin:
   plugins: [
     ...
     {
-      resolve: 'gatsby-source-greenhouse-job-board',
+      resolve: 'gatsby-source-greenhouse-io',
       options: {
         boardToken: '{board token}'
       },
@@ -46,8 +47,8 @@ GraphQL model.
   allGreenhouseJob {
     edges {
       node {
-      title
-      absolute_url
+        title
+        absolute_url
         location {
           name
         }
@@ -72,11 +73,11 @@ types and properties available.
 
 ### Query jobs
 
-Jobs are linked to their `departments` and `offices`, which following the format of the API, returns an array. 
+Jobs are linked to their `departments` and `offices`, which following the format of the API, returns an array.
 
 ```graphql
 {
-allGreenhouseJob {
+  allGreenhouseJob {
     edges {
       node {
         id
@@ -93,7 +94,7 @@ allGreenhouseJob {
             name
             type
           }
-    	  }
+        }
         location {
           name
         }
@@ -121,12 +122,12 @@ Department data links to `jobs` from which all data mentioned in the previous ex
         id
         name
         parent {
-          ...on GreenhouseDepartment {
+          ... on GreenhouseDepartment {
             name
           }
         }
         children {
-          ...on GreenhouseDepartment {
+          ... on GreenhouseDepartment {
             name
           }
         }
@@ -152,12 +153,12 @@ Office data links to both `departments` and `jobs` from which all data mentioned
         id
         name
         parent {
-          ...on GreenhouseOffice {
+          ... on GreenhouseOffice {
             name
           }
         }
         children {
-          ...on GreenhouseOffice {
+          ... on GreenhouseOffice {
             name
           }
         }
@@ -175,7 +176,7 @@ Office data links to both `departments` and `jobs` from which all data mentioned
 
 Greenhouse provides two APIs for sourcing information on open jobs, `Harvest` and `Job Board`. For most use-cases that involve presenting and displaying job posts on a website, the Job Board API is sufficient and recommended because:
 
--   No authentication is required, therefore no need to manage secrets. etc.
--   Harvest API provides a significant amount of data which some individuals and/or organizations may consider to be sensitive
+- No authentication is required, therefore no need to manage secrets. etc.
+- Harvest API provides a significant amount of data which some individuals and/or organizations may consider to be sensitive
 
 More information on the Job Board API can be found on the [Greenhouse Developer Website](https://developers.greenhouse.io/job-board.html).

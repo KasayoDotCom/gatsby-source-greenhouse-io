@@ -1,11 +1,11 @@
 {
-  "name": "gatsby-source-greenhouse-job-board",
+  "name": "gatsby-source-greenhouse-io",
   "version": "1.0.4",
   "description": "Gatsby source plugin for pulling offices, departments, and jobs into Gatsby from the Greenhouse Job Board API. It creates links between offices, departments, and jobs so they can be queried in Gatsby using GraphQL.",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/kevinbarnett/gatsby-source-greenhouse-job-board"
+    "url": "https://github.com/KasayoDotCom/gatsby-source-greenhouse-io"
   },
   "keywords": [
     "gatsby",
@@ -13,7 +13,7 @@
     "gatsby-source-plugin",
     "greenhouse"
   ],
-  "author": "Kevin Barnett",
+  "author": "Kasayo",
   "license": "MIT",
   "dependencies": {
     "@babel/runtime": "^7.0.0",
