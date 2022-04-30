@@ -180,3 +180,10 @@ Greenhouse provides two APIs for sourcing information on open jobs, `Harvest` an
 - Harvest API provides a significant amount of data which some individuals and/or organizations may consider to be sensitive
 
 More information on the Job Board API can be found on the [Greenhouse Developer Website](https://developers.greenhouse.io/job-board.html).
+
+## Kevin's work
+
+This source plugin was mainly written by Kevin Barnett and was rereleased due to not being maintained anymore.
+
+The original source plugin can be found here:
+https://github.com/kevinbarnett/gatsby-source-greenhouse-job-board
